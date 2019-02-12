@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HTML5 & CSS3 website</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header>
+            <div id="logo" onclick="slowScroll('#top')">
+                <span>Jason</span>
+            </div>
+            <div id="about">
+                <a href="#" title="Möjligheter" onclick="slowScroll('#main')">Möjligheter</a>
+                <a href="#" title="Fördelar" onclick="slowScroll('#overview')">Fördelar</a>
+                <a href="#" title="Kontakt" onclick="slowScroll('#contacts')">Kontakta oss</a>
+                <a href="#" title="Svar på frågor" onclick="slowScroll('#faq')">FAQ</a>
+            </div>
+        </header>
+
+        <div id="top">
+            <h1>Programmera</h1>
+            <h3>Det är lätt</h3>
+        </div>
+
+        <div id="main">
+            <div class="intro">
+                <h2>Vi hjälper dig!</h2>
+                <span>Vi har allt du behöver</span>
+            </div>
+            <div class="text">              
+                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, iste veritatis ratione beatae enim id nihil ab provident saepe expedita quisquam earum, assumenda nobis placeat animi soluta? Ullam, non iste.</span>
+            </div>
+        </div>
+
+        <div id="overview">
+            <h2>Fördelar</h2>
+            <h4>Med oss allt blir lättare</h4>
+            
+            <div class="img">
+                <img src="img/view1.jpg" alt="">
+                <span>Tänka mera</span>
+            </div>
+            <div class="img">
+                <img src="img/view2.jpeg" alt="">
+                <span>Hamma mera</span>
+            </div>
+            <div class="img">
+                <img src="img/view3.jpg" alt="">
+                <span>Tanka mera</span>
+            </div>
+            <div class="img">
+                <img src="img/view4.jpg" alt="">
+                <span>Gör mera</span>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function () {
+            if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+            else
+            $("header").attr("class", "fixed");
+        });
+        </script>
+    </body>
+</html>
